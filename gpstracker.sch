@@ -1,0 +1,432 @@
+EESchema Schematic File Version 2
+LIBS:cd40106_mine
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:nodemcu
+LIBS:cmos_ieee
+LIBS:borniers
+LIBS:sdmodule
+LIBS:ubloxneo6m
+LIBS:gpstracker-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Sistema de seguimiento GPS"
+Date "2016-12-06"
+Rev "1.0"
+Comp "Autores: Ailán, Julián - Hourquebie, Lucas"
+Comment1 "Diagrama esquemático desarrollado para la cátedra de Taller de Proyecto II, UNLP."
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L NodeMCU_Amica_R2 U2
+U 1 1 582B4FE1
+P 6650 2850
+F 0 "U2" H 6650 3650 50  0000 C CNN
+F 1 "NodeMCU_Amica_R2" H 6650 2000 50  0000 C CNN
+F 2 "NodeMCU:NodeMCU_Amica_R2" H 6900 2850 50  0001 C CNN
+F 3 "" H 6900 2850 50  0000 C CNN
+	1    6650 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L D D2
+U 1 1 582B5019
+P 4950 4850
+F 0 "D2" H 4950 4950 50  0000 C CNN
+F 1 "D" H 4950 4750 50  0000 C CNN
+F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 4950 4850 50  0001 C CNN
+F 3 "" H 4950 4850 50  0000 C CNN
+	1    4950 4850
+	0    1    1    0   
+$EndComp
+$Comp
+L D D1
+U 1 1 582B508C
+P 4950 4250
+F 0 "D1" H 4950 4350 50  0000 C CNN
+F 1 "D" H 4950 4150 50  0000 C CNN
+F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 4950 4250 50  0001 C CNN
+F 3 "" H 4950 4250 50  0000 C CNN
+	1    4950 4250
+	0    1    1    0   
+$EndComp
+$Comp
+L R R1
+U 1 1 582B50E3
+P 3850 4850
+F 0 "R1" V 3930 4850 50  0000 C CNN
+F 1 "R" V 3850 4850 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3780 4850 50  0001 C CNN
+F 3 "" H 3850 4850 50  0000 C CNN
+	1    3850 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_2_V P1
+U 1 1 582B542A
+P 4550 4850
+F 0 "P1" H 4470 5075 40  0000 C CNN
+F 1 "CONN_2_V" H 4520 5030 40  0000 C CNN
+F 2 "borniers:bornier2_V" H 4550 4850 60  0001 C CNN
+F 3 "" H 4550 4850 60  0001 C CNN
+	1    4550 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 4700 3850 4550
+Wire Wire Line
+	3850 4550 5500 4550
+Wire Wire Line
+	4200 4750 4200 4550
+Connection ~ 4200 4550
+Wire Wire Line
+	4950 4400 4950 4700
+Connection ~ 4950 4550
+Wire Wire Line
+	3850 5000 3850 5150
+Wire Wire Line
+	4200 5150 4200 4950
+Wire Wire Line
+	4950 5150 4950 5000
+$Comp
+L uBloxNeo6m GPS1
+U 1 1 582E5072
+P 8150 3350
+F 0 "GPS1" H 8150 3800 60  0000 C CNN
+F 1 "uBloxNeo6m" H 8150 2950 60  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04" H 8350 3800 60  0001 C CNN
+F 3 "" H 8350 3800 60  0001 C CNN
+	1    8150 3350
+	-1   0    0    -1  
+$EndComp
+Text Notes 3300 5550 0    60   ~ 0
+Circuito de acondicionamiento de señal.
+Wire Notes Line
+	5350 5650 3150 5650
+Wire Notes Line
+	3150 5650 3150 5400
+Wire Notes Line
+	3150 5400 5350 5400
+Wire Notes Line
+	5350 5400 5350 5650
+Wire Wire Line
+	7100 3550 7850 3550
+Wire Wire Line
+	7100 3050 7750 3050
+Wire Wire Line
+	7100 2950 7800 2950
+$Comp
+L LED D4
+U 1 1 5842FD99
+P 8100 2350
+F 0 "D4" H 8100 2450 50  0000 C CNN
+F 1 "LED" H 8100 2250 50  0000 C CNN
+F 2 "LEDs:LED-5MM" H 8100 2350 50  0001 C CNN
+F 3 "" H 8100 2350 50  0000 C CNN
+	1    8100 2350
+	-1   0    0    1   
+$EndComp
+$Comp
+L LED D3
+U 1 1 5842FDFC
+P 8100 2100
+F 0 "D3" H 8100 2200 50  0000 C CNN
+F 1 "LED" H 8100 2000 50  0000 C CNN
+F 2 "LEDs:LED-5MM" H 8100 2100 50  0001 C CNN
+F 3 "" H 8100 2100 50  0000 C CNN
+	1    8100 2100
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R4
+U 1 1 5842FEC6
+P 7700 2600
+F 0 "R4" V 7780 2600 50  0000 C CNN
+F 1 "R" V 7700 2600 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 7630 2600 50  0001 C CNN
+F 3 "" H 7700 2600 50  0000 C CNN
+	1    7700 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R3
+U 1 1 5842FF4B
+P 7700 2350
+F 0 "R3" V 7780 2350 50  0000 C CNN
+F 1 "R" V 7700 2350 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 7630 2350 50  0001 C CNN
+F 3 "" H 7700 2350 50  0000 C CNN
+	1    7700 2350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R2
+U 1 1 5842FF8A
+P 7700 2100
+F 0 "R2" V 7780 2100 50  0000 C CNN
+F 1 "R" V 7700 2100 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 7630 2100 50  0001 C CNN
+F 3 "" H 7700 2100 50  0000 C CNN
+	1    7700 2100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L LED D5
+U 1 1 5843027B
+P 8100 2600
+F 0 "D5" H 8100 2700 50  0000 C CNN
+F 1 "LED" H 8100 2500 50  0000 C CNN
+F 2 "LEDs:LED-5MM" H 8100 2600 50  0001 C CNN
+F 3 "" H 8100 2600 50  0000 C CNN
+	1    8100 2600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7850 2100 7900 2100
+Wire Wire Line
+	7900 2350 7850 2350
+Wire Wire Line
+	7850 2600 7900 2600
+Wire Wire Line
+	7100 2350 7550 2350
+Wire Wire Line
+	7100 2250 7550 2250
+Wire Wire Line
+	7550 2250 7550 2100
+Wire Wire Line
+	7100 2450 7550 2450
+Wire Wire Line
+	7550 2450 7550 2600
+Wire Wire Line
+	8350 2100 8350 2800
+Wire Wire Line
+	8350 2100 8300 2100
+Wire Wire Line
+	8300 2350 8350 2350
+Connection ~ 8350 2350
+Wire Wire Line
+	8300 2600 8350 2600
+Connection ~ 8350 2600
+NoConn ~ 6200 2150
+NoConn ~ 6200 2450
+NoConn ~ 6200 2550
+NoConn ~ 6200 2650
+NoConn ~ 6200 2750
+NoConn ~ 6200 2850
+NoConn ~ 6200 2950
+NoConn ~ 6200 3250
+NoConn ~ 6200 3350
+NoConn ~ 6200 3550
+NoConn ~ 7100 2150
+NoConn ~ 7100 2550
+NoConn ~ 7100 2850
+NoConn ~ 7100 3250
+NoConn ~ 7100 3350
+NoConn ~ 7100 3450
+NoConn ~ 7100 2650
+Wire Wire Line
+	7750 3050 7750 3400
+Wire Wire Line
+	7750 3400 7850 3400
+Wire Wire Line
+	7800 2950 7800 3250
+Wire Wire Line
+	7800 3250 7850 3250
+Wire Wire Line
+	7850 3100 7850 2750
+Connection ~ 7850 2750
+$Comp
+L +3.3V #PWR01
+U 1 1 584325DC
+P 7450 3400
+F 0 "#PWR01" H 7450 3250 50  0001 C CNN
+F 1 "+3.3V" H 7450 3540 50  0000 C CNN
+F 2 "" H 7450 3400 50  0000 C CNN
+F 3 "" H 7450 3400 50  0000 C CNN
+	1    7450 3400
+	1    0    0    -1  
+$EndComp
+Connection ~ 7450 3550
+$Comp
+L GND #PWR02
+U 1 1 58432909
+P 8350 2800
+F 0 "#PWR02" H 8350 2550 50  0001 C CNN
+F 1 "GND" H 8350 2650 50  0000 C CNN
+F 2 "" H 8350 2800 50  0000 C CNN
+F 3 "" H 8350 2800 50  0000 C CNN
+	1    8350 2800
+	1    0    0    -1  
+$EndComp
+Connection ~ 8350 2750
+$Comp
+L +3.3V #PWR03
+U 1 1 58432CEA
+P 3200 2400
+F 0 "#PWR03" H 3200 2250 50  0001 C CNN
+F 1 "+3.3V" H 3200 2540 50  0000 C CNN
+F 2 "" H 3200 2400 50  0000 C CNN
+F 3 "" H 3200 2400 50  0000 C CNN
+	1    3200 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR04
+U 1 1 58432D1E
+P 3200 3000
+F 0 "#PWR04" H 3200 2750 50  0001 C CNN
+F 1 "GND" H 3200 2850 50  0000 C CNN
+F 2 "" H 3200 3000 50  0000 C CNN
+F 3 "" H 3200 3000 50  0000 C CNN
+	1    3200 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L PWR_FLAG #FLG05
+U 1 1 58432D52
+P 2650 2400
+F 0 "#FLG05" H 2650 2495 50  0001 C CNN
+F 1 "PWR_FLAG" H 2650 2580 50  0000 C CNN
+F 2 "" H 2650 2400 50  0000 C CNN
+F 3 "" H 2650 2400 50  0000 C CNN
+	1    2650 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L PWR_FLAG #FLG06
+U 1 1 58432D86
+P 2650 2950
+F 0 "#FLG06" H 2650 3045 50  0001 C CNN
+F 1 "PWR_FLAG" H 2650 3130 50  0000 C CNN
+F 2 "" H 2650 2950 50  0000 C CNN
+F 3 "" H 2650 2950 50  0000 C CNN
+	1    2650 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 2400 2650 2450
+Wire Wire Line
+	2650 2950 2650 3000
+Wire Wire Line
+	2650 3000 3200 3000
+Wire Wire Line
+	2650 2450 3200 2450
+Wire Wire Line
+	3200 2450 3200 2400
+NoConn ~ 6200 3450
+Wire Wire Line
+	7450 3400 7450 3550
+Wire Wire Line
+	7100 2750 8550 2750
+Connection ~ 4200 5150
+$Comp
+L GND #PWR07
+U 1 1 58436C1B
+P 4950 5150
+F 0 "#PWR07" H 4950 4900 50  0001 C CNN
+F 1 "GND" H 4950 5000 50  0000 C CNN
+F 2 "" H 4950 5150 50  0000 C CNN
+F 3 "" H 4950 5150 50  0000 C CNN
+	1    4950 5150
+	1    0    0    -1  
+$EndComp
+Connection ~ 4950 5150
+$Comp
+L CD40106 CD1
+U 1 1 584391CF
+P 5700 5550
+F 0 "CD1" H 5950 6700 60  0000 C CNN
+F 1 "CD40106" H 6000 5500 60  0000 C CNN
+F 2 "Housings_DIP:DIP-14_W7.62mm" H 5700 5550 60  0001 C CNN
+F 3 "" H 5700 5550 60  0001 C CNN
+	1    5700 5550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 4700 5400 4700
+Wire Wire Line
+	5400 4700 5400 4300
+Wire Wire Line
+	5400 4300 6600 4300
+Wire Wire Line
+	6600 4300 6600 4700
+Wire Wire Line
+	6600 4700 6450 4700
+Wire Wire Line
+	5500 5450 5400 5450
+Wire Wire Line
+	5400 5150 5400 5750
+Wire Wire Line
+	6450 4850 7250 4850
+Wire Wire Line
+	7250 4850 7250 3150
+Wire Wire Line
+	7250 3150 7100 3150
+NoConn ~ 5500 4850
+NoConn ~ 5500 5000
+NoConn ~ 5500 5150
+NoConn ~ 5500 5300
+NoConn ~ 6450 5000
+NoConn ~ 6450 5150
+NoConn ~ 6450 5300
+NoConn ~ 6450 5450
+Wire Wire Line
+	3850 5150 5400 5150
+Wire Wire Line
+	4950 4100 7200 4100
+Wire Wire Line
+	7200 4100 7200 3550
+Connection ~ 7200 3550
+Wire Wire Line
+	6450 4550 6450 4100
+Connection ~ 6450 4100
+Wire Wire Line
+	5400 5750 8550 5750
+Wire Wire Line
+	8550 5750 8550 2750
+Connection ~ 5400 5450
+NoConn ~ 6200 3050
+NoConn ~ 6200 3150
+Text Notes 1600 3500 0    60   ~ 0
+Definición de tensiones utilizadas por el circuito.\n
+Wire Notes Line
+	1500 3350 3950 3350
+Wire Notes Line
+	3950 3350 3950 3550
+Wire Notes Line
+	3950 3550 1500 3550
+Wire Notes Line
+	1500 3550 1500 3350
+$EndSCHEMATC
